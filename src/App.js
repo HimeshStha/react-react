@@ -1,24 +1,28 @@
 import React from 'react'
-import Header from './components/Header'
-import Homepage from './pages/Homepage';
 import { Route, Routes } from 'react-router';
+import RootLayout from './pages/RootLayout';
+import Homepage from './pages/Homepage';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 const App = () => {
 
 
-  const mino = 'hello user';
+
 
   return (
     <div>
 
-      <Header />
+
 
       <Routes>
+        <Route path='/' element={<RootLayout />}>
 
-        <Route path='/' element={<Homepage />} />
-        <Route path='about' element={<About />} />
+          <Route index element={<Homepage />} />
+          <Route path='about' element={<About />} />
+          <Route path='*' element={<NotFound />} />
 
+        </Route>
 
 
       </Routes>
