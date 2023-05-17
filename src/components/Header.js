@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
 
@@ -12,8 +13,9 @@ const Header = () => {
 
       <nav className='space-x-7'>
 
-        <a href=''>About</a>
-        <a href=''>Contact</a>
+        <NavLink to='/about'>About</NavLink>
+        <NavLink to='/contact'>Contact</NavLink>
+
       </nav>
     </header>
   )
